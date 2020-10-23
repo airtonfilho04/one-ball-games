@@ -1,0 +1,12 @@
+<div>
+<% if admin_signed_in? %>
+    Welcome <%=  current_admin.email %>
+    <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
+<% end %>
+</div>
+
+<h1>New Game</h1>
+
+<%= render 'form', game: @game %>
+
+<%= link_to 'Back', games_path %>

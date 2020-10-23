@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+<div>
+<% if admin_signed_in? %>
+    Welcome <%=  current_admin.email %>
+    <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
+<% end %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Platforms:</strong>
+  <%= @game.platforms %>
+</p>
+
+<p>
+  <strong>Genres:</strong>
+  <%= @game.genres %>
+</p>
+
+<p>
+  <strong>Publishers:</strong>
+  <%= @game.publishers %>
+</p>
+
+<p>
+  <strong>Developers:</strong>
+  <%= @game.developers %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @game.score %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= image_tag 'https://one-ball-games.s3.us-east-2.amazonaws.com/'+@game.image.path, :style => "width: 20%" %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
